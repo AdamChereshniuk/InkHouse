@@ -1,4 +1,5 @@
 const headerCartBtn = document.querySelector(".header__cart-btn");
+const headerTabletCartBtn = document.querySelector(".header-tablet__cart-btn");
 
 const catalogTabs = document.querySelectorAll(".catalog-top__tab");
 const catalogFranceList = document.querySelector(".catalog__list.france");
@@ -109,7 +110,7 @@ const openCartPopup = () => {
     cartPopup.classList.add("open");
 };
 
-headerCartBtn.addEventListener("click", openCartPopup);
+[headerCartBtn, headerTabletCartBtn].forEach(btn => btn.addEventListener("click", openCartPopup));
 cartPopupCloseBtn.addEventListener("click", closeCartPopup);
 cartPopupBox.addEventListener("click", (e) => e._isClickWithInModal = true);
 cartPopup.addEventListener("click", (e) => {
