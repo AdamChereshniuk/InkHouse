@@ -28,6 +28,60 @@
         min-width: 380px;
         max-width: 380px;
     }
+
+    .footer__inner {
+        display: none;
+    }
+
+    .footer-tablet__inner {
+        display: flex;
+    }
+
+    .cart-popup {
+        max-width: 100%;
+    }
+
+    .cart-popup__table {
+        overflow: scroll;
+        margin: 40px 0 0;
+        gap: 40px;
+    }
+
+    .cart-popup__head {
+        display: none;
+    }
+
+    .cart-popup__row {
+        border: none;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        align-items: center;
+        padding: 0;
+    }
+
+    .cart-popup__row-text {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .cart-popup__row-text:first-child {
+        font-weight: 700;
+    }
+
+    .cart-popup__table::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cart-popup__bottom {
+        margin: 40px 0 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .cart-popup__result {
+        text-align: center;
+    }
 }
 
 @media (max-width: 960px) {
@@ -54,6 +108,10 @@
     .team__text {
         margin: 30px 0;
     }
+
+    .cart-popup__success-title {
+        font-size: 42px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -73,8 +131,25 @@
         display: none;
     }
 
+    .hero__inner {
+        padding-top: 80px;
+    }
+
     .catalog-top {
         flex-direction: column;
+    }
+
+    .footer-tablet-bottom__wrapper {
+        display: none;
+    }
+
+    .cart-popup__box {
+        padding: 25px;
+    }
+
+    .cart-popup__success-title {
+        font-size: 28px;
+        text-align: center;
     }
 }
 
@@ -111,6 +186,14 @@
 
     .catalog__item-btn {
         padding: 20px;
+    }
+
+    .cart-popup__title {
+        font-size: 38px;
+    }
+
+    .cart-popup__empty-text {
+        font-size: 24px;
     }
 }
 
@@ -163,5 +246,14 @@
     .team__img-2 {
         left: 36px;
         bottom: 32px;
+    }
+
+    .footer-tablet-top {
+        flex-direction: column;
+    }
+
+    .footer-tablet-bottom__lists {
+        flex-wrap: wrap;
+        gap: 30px;
     }
 }

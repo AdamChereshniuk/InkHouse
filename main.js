@@ -1,4 +1,5 @@
 const headerCartBtn = document.querySelector(".header__cart-btn");
+const headerCartBtnCount = document.querySelector(".header__cart-btn-count");
 const headerTabletCartBtn = document.querySelector(".header-tablet__cart-btn");
 
 const catalogTabs = document.querySelectorAll(".catalog-top__tab");
@@ -25,6 +26,18 @@ catalogEnglandList.classList.add("none");
 
 cartPopupSuccess.classList.add("none");
 cartPopupEmptyText.classList.add("none");
+
+// Функция изменения счетчика в углучу корзины
+const changeHeaderBtnsCountSpans = () => {
+    const localStorageItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let totalItemsCount = 0;
+    localStorageItems.forEach(item => totalItemsCount += item.count);
+
+    headerCartBtnCount.innerHTML = totalItemsCount;
+};
+
+document.addEventListener("DOMContentLoaded", changeHeaderBtnsCountSpans);
 
 // CatalogTabs
 catalogTabs.forEach((tab, index) => tab.addEventListener("click", () => {
@@ -64,6 +77,8 @@ catalogItemsArr.forEach(item => {
         };
 
         localStorage.setItem("cart", JSON.stringify(newLocalStorageItems));
+
+        changeHeaderBtnsCountSpans();
     });
 });
 
@@ -72,6 +87,8 @@ cartPopupPayBtn.addEventListener("click", () => {
     localStorage.setItem("cart", JSON.stringify([]));
     cartPopupContent.classList.add("none");
     cartPopupSuccess.classList.remove("none");
+    headerCartBtnCount.innerHTML = "0";
+    changeHeaderBtnsCountSpans();
 });
 
 // CartPopup
