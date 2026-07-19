@@ -162,6 +162,15 @@
     }
     .header-tablet__inner {
         display: flex;
+        align-items: center;
+    }
+
+    .hero__title, .hero__text {
+        text-align: center;
+    }
+
+    .hero__link {
+        margin: 0 auto;
     }
 
     .hero__text {
